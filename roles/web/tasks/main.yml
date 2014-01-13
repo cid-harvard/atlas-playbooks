@@ -1,0 +1,22 @@
+---
+- name: install system packages
+  apt: pkg={{item}} state=present
+  with_items: "{{ system_packages }}"
+  sudo: yes
+- name: install virtualenv
+  pip: name=virtualenv
+  sudo: yes
+- name: create srv dir
+  file: dest=/srv owner=vagrant group=vagrant state=directory
+  sudo: yes
+- name: get code
+  git: repo=https://github.com/romsson/observatory_economic_complexity.git
+       dest=/srv/atlas
+       version=HEAD
+- name: install atlas python requirements
+  pip: requirements={{prefix}}/requirements.txt virtualenv={{prefix}}/env/
+- name: Run server
+  django_manage: >
+      command=runserver
+      app_path={{prefix}}/django_files/
+      virtualenv={{prefix}}/env/

@@ -1,0 +1,6 @@
+---
+system_packages:
+    - git
+    - python2.7
+    - python-pip
+prefix: /srv/atlas
