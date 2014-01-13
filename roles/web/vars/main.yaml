@@ -3,4 +3,6 @@ system_packages:
     - git
     - python2.7
     - python-pip
+    - libmysqlclient-dev
+    - python-dev
 prefix: /srv/atlas
