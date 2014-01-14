@@ -6,7 +6,7 @@ Ansible playbooks and Vagrantfile for the Atlas of Economic Complexity.
 Setting Up a Development Environment
 ------------------------------------
 
-To easily install a dev environment from scratch:
+To easily install a virtualized dev environment from scratch:
 - Get Virtualbox: https://www.virtualbox.org/wiki/Downloads
 - Get Vagrant: http://www.vagrantup.com/downloads.html
 - Install ansible globally with `sudo pip install ansible` (or use easy_install instead of pip).
