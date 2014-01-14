@@ -18,8 +18,8 @@ To easily install a virtualized dev environment from scratch:
 - Finally, run `vagrant ssh` to get in, then `cd /srv/atlas/` and `source
   env/bin/activate` to get into the virtualenv. Then go in `django_files` and
   run `manage.py runserver 0.0.0.0:8000`. The 0.0.0.0 is important to get
-  django to answer requests on ports other than localhost (which would be the
-  case when trying to access it from outside the virtual box).
+  django to answer requests on ports other than within the virtualbox
+- Go to http://127.0.0.1:8000/
 
 Usage Info
 ---------
@@ -35,5 +35,3 @@ Usage Info
 - There are also port forwards for the services running inside the VM.
     * 8000: main HTTP server
     * 3307: mysql
-
-So for example: http://localhost:8080/ should get to the Django server in the vm.
