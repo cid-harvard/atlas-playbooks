@@ -13,8 +13,17 @@
   git: repo=https://github.com/romsson/observatory_economic_complexity.git
        dest=/srv/atlas
        version=beta
+
+# TODO: Install pip packages manually for now to avoid installing numpy, it
+# takes forever. Also django version not specified in requirements.txt
+#- name: install atlas python requirements
+#  pip: requirements={{prefix}}/requirements.txt virtualenv={{prefix}}/env/
 - name: install atlas python requirements
-  pip: requirements={{prefix}}/requirements.txt virtualenv={{prefix}}/env/
+  pip: name={{item}} virtualenv={{prefix}}/env/
+  with_items:
+    - Django==1.4.5
+    - MySQL-python
+    - django-redis
 - name: Run server
   django_manage: >
       command=runserver
