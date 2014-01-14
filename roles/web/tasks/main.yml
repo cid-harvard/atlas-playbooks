@@ -28,8 +28,19 @@
     - pycrypto
 - name: generate django settings
   template: src=settings_local.py dest={{prefix}}/django_files/atlas/
-- name: Run server
+- name: Django Syncdb
   django_manage: >
-      command=runserver
+      command=syncdb
       app_path={{prefix}}/django_files/
       virtualenv={{prefix}}/env/
+
+#TODO: Doing this via shell for now because django_manage doesn't let you pass
+#a listen ip to runserver. Don't do this in production
+#- name: Run server
+#  django_manage: >
+#      command=runserver
+#      app_path={{prefix}}/django_files/
+#      virtualenv={{prefix}}/env/
+
+#- name: run django server
+#  shell: ls; {{prefix}}/env/bin/python {{prefix}}/django_files/manage.py runserver --pythonpath={{prefix}}/django_files/ 0.0.0.0:8000

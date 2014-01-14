@@ -5,6 +5,7 @@
     - {role: db}
     - {role: web}
   vars:
+    atlas_django_listen_addr: 0.0.0.0 # So it can listen to requests from non-localhost
     atlas_db_user: atlas
     atlas_db_password: atlas
     atlas_db_host: 127.0.0.1
