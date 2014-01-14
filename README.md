@@ -15,6 +15,11 @@ To easily install a dev environment from scratch:
 - Sit back and wait till all the stuff downloads. It'll download a 350mb VM
   image, around that much more for all the required python and ubuntu packages.
   Should take around 15 minutes.
+- Finally, run `vagrant ssh` to get in, then `cd /srv/atlas/` and `source
+  env/bin/activate` to get into the virtualenv. Then go in `django_files` and
+  run `manage.py runserver 0.0.0.0:8000`. The 0.0.0.0 is important to get
+  django to answer requests on ports other than localhost (which would be the
+  case when trying to access it from outside the virtual box).
 
 Usage Info
 ---------
@@ -28,7 +33,7 @@ Usage Info
 - If you need to run ansible manually, try: http://docs.ansible.com/guide_vagrant.html#running-ansible-manually
 - If you want to make ansible do more stuff, check out the ansible module index: http://docs.ansible.com/modules_by_category.html
 - There are also port forwards for the services running inside the VM.
-    * 8080: main HTTP server
+    * 8000: main HTTP server
     * 3307: mysql
 
 So for example: http://localhost:8080/ should get to the Django server in the vm.
