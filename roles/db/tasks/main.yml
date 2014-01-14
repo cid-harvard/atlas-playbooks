@@ -1,0 +1,9 @@
+---
+- name: install system packages
+  apt: pkg={{item}} state=present
+  with_items: "{{ system_packages }}"
+  sudo: yes
+- name: add mysql user
+  mysql_user: name=atlas password=atlas priv=*.*:ALL state=present
+- name: add mysql user
+  mysql_db: name=atlas state=present
