@@ -12,7 +12,7 @@
 - name: get code
   git: repo=https://github.com/romsson/observatory_economic_complexity.git
        dest=/srv/atlas
-       version=HEAD
+       version=beta
 - name: install atlas python requirements
   pip: requirements={{prefix}}/requirements.txt virtualenv={{prefix}}/env/
 - name: Run server
