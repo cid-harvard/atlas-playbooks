@@ -58,6 +58,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Run provisioning with ansible
   config.vm.provision "ansible" do |ansible|
       ansible.playbook = "playbook.yml"
+      ansible.verbose = "v"
+      # Use this to override ansible playbook variables
+      ansible.extra_vars = { var1: "value1"}
   end
 
 end
