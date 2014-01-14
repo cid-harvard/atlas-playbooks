@@ -20,7 +20,7 @@ Usage Info
 ---------
 - There are two shared directories with the VM. Any change made within the VM
   reflects to the outside of the VM, and vice versa.
-    * `data/`: For moving over large SQL dumps etc.
+    * `vagrant_shared/`: For moving over large SQL dumps etc.
     * `atlas/`: Contains the main source for the site, a checkout of the
       observatory_economic_complexity repo. You can code on this.
 - Run "vagrant ssh" to get into the box.
