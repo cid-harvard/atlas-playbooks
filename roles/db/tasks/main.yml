@@ -5,5 +5,5 @@
   sudo: yes
 - name: add mysql user
   mysql_user: name=atlas password=atlas priv=*.*:ALL state=present
-- name: add mysql user
+- name: add atlas db
   mysql_db: name=atlas state=present
