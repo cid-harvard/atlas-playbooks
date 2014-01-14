@@ -24,6 +24,8 @@
     - Django==1.4.5
     - MySQL-python
     - django-redis
+- name: generate django settings
+  template: src=settings_local.py dest={{prefix}}/django_files/atlas/
 - name: Run server
   django_manage: >
       command=runserver
