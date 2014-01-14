@@ -1,18 +1,20 @@
 atlas-playbooks
 ===============
 
+Ansible playbooks and Vagrantfile for the Atlas of Economic Complexity.
+
 Setting Up a Development Environment
 ------------------------------------
 
-Ansible playbooks and Vagrantfile for the Atlas of Economic Complexity.
-
-To install a dev environment from scratch:
+To easily install a dev environment from scratch:
 - Get Virtualbox: https://www.virtualbox.org/wiki/Downloads
 - Get Vagrant: http://www.vagrantup.com/downloads.html
 - Install ansible globally with `sudo pip install ansible` (or use easy_install instead of pip).
+- Double check that the installs worked by running `ansible` and `vagrant` in the command line.
 - Run `git clone https://github.com/makmanalp/atlas-playbooks && cd atlas-playbooks && vagrant up`
 - Sit back and wait till all the stuff downloads. It'll download a 350mb VM
   image, around that much more for all the required python and ubuntu packages.
+  Should take around 10 minutes.
 
 Usage Info
 ---------
@@ -25,4 +27,5 @@ Usage Info
 - There are also port forwards for the services running inside the VM.
     * 8080: main HTTP server
     * 3307: mysql
-  Example: http://localhost:8080/ should get to the django server in the vm.
+
+So for example: http://localhost:8080/ should get to the Django server in the vm.
