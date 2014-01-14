@@ -34,3 +34,7 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+# Vagrant
+vagrant_ansible_inventory_default
+.vagrant/
