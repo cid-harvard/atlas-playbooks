@@ -14,7 +14,7 @@ To easily install a dev environment from scratch:
 - Run `git clone https://github.com/makmanalp/atlas-playbooks && cd atlas-playbooks && vagrant up`
 - Sit back and wait till all the stuff downloads. It'll download a 350mb VM
   image, around that much more for all the required python and ubuntu packages.
-  Should take around 10 minutes.
+  Should take around 15 minutes.
 
 Usage Info
 ---------
@@ -24,6 +24,9 @@ Usage Info
     * `atlas/`: Contains the main source for the site, a checkout of the
       observatory_economic_complexity repo. You can code on this.
 - Run "vagrant ssh" to get into the box.
+- Run "vagrant help" for more info on how to stop, start, reload, destroy the virtual box.
+- If you need to run ansible manually, try: http://docs.ansible.com/guide_vagrant.html#running-ansible-manually
+- If you want to make ansible do more stuff, check out the ansible module index: http://docs.ansible.com/modules_by_category.html
 - There are also port forwards for the services running inside the VM.
     * 8080: main HTTP server
     * 3307: mysql
