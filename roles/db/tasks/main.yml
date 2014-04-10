@@ -4,6 +4,6 @@
   with_items: "{{ system_packages }}"
   sudo: yes
 - name: add mysql user
-  mysql_user: name=atlas password=atlas priv=*.*:ALL state=present
+  mysql_user: name=atlas password=atlas host=192.168.33.1 priv=*.*:ALL state=present
 - name: add atlas db
   mysql_db: name=atlas state=present
