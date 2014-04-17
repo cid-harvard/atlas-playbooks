@@ -12,7 +12,7 @@
 - name: get code
   git: repo=https://github.com/romsson/observatory_economic_complexity.git
        dest=/srv/atlas
-       version=beta
+       version=master
 
 # TODO: Install pip packages manually for now to avoid installing numpy, it
 # takes forever. Also django version not specified in requirements.txt
