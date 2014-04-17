@@ -11,6 +11,7 @@ To easily install a virtualized dev environment from scratch:
 - Get Vagrant: http://www.vagrantup.com/downloads.html
 - Install ansible globally with `sudo pip install ansible` (or use easy_install instead of pip).
 - Double check that the installs worked by running `ansible` and `vagrant` in the command line.
+- Put a bzip-compressed atlas db dump into the vagrant_shared directory and name it atlas_dump.sql.bz2.
 - Run `git clone https://github.com/makmanalp/atlas-playbooks && cd atlas-playbooks && mkdir atlas && vagrant up`
 - Sit back and wait till all the stuff downloads. It'll download a 350mb VM
   image, around that much more for all the required python and ubuntu packages.
