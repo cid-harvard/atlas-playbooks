@@ -8,4 +8,5 @@
 - name: create atlas user for external connections
   mysql_user: name=atlas password=atlas host=192.168.33.1 priv=*.*:ALL state=present
 - name: add atlas db
-  mysql_db: name=atlas state=present
+  mysql_db: name=atlas state=present #can use state=import here http://docs.ansible.com/mysql_db_module.html
+
