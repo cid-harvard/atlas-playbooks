@@ -18,7 +18,7 @@ LOCALE_PATHS = (
 )
 
 TEMPLATE_DIRS = (
-    '{{atlas_prefix}}/observatory/html',
+    '{{atlas_prefix}}/html',
 )
 
 SECRET_KEY = 'my_pets_name_is_eloise'
