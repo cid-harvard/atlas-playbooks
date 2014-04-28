@@ -1,0 +1,5 @@
+- name: django syncdb
+  django_manage: >
+      command=syncdb
+      app_path={{prefix}}/django_files/
+      virtualenv={{prefix}}/env/

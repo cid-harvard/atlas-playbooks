@@ -1,0 +1,3 @@
+- name: import atlas db
+  mysql_db: name=atlas state=import target=/vagrant_shared/atlas_dump.sql.bz2
+  notify: django syncdb
