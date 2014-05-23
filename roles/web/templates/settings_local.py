@@ -33,9 +33,19 @@ CACHES = {
 
 HTTP_HOST = '/'
 DB_PREFIX = 'new_'
-STATIC_IMAGE_MODE = 'PNG'
-DATA_FILES_PATH = '/tmp/'
-INTERNAL_IPS = ('127.0.0.1','192.168.33.1', '10.0.2.2') #For Django debug toolbar
+DATA_FILES_PATH = '{{atlas_prefix}}/media/data'
+INTERNAL_IPS = ('127.0.0.1',
+                '192.168.33.1',
+                '10.0.2.2') #For Django debug toolbar
 
 # FOR VERBOSE JS OUTPUT
 DEV = False
+DEBUG = True
+
+STATIC_IMAGE_MODE = 'PNG'
+EXPORT_IMAGE_WIDTH = 748
+EXPORT_IMAGE_HEIGHT = 520
+
+PHANTOM_JS_EXECUTABLE = '/usr/bin/phantomjs'
+PHANTOM_JS_SCRIPT = '{{atlas_prefix}}/media/js/explore/generate.svg.js'
+BACKGROUND_CACHE_URL_HOST = 'localhost:8000'
