@@ -1,9 +1,11 @@
 ---
 - hosts: all
   gather_facts: false
+  sudo: yes
   roles:
     - {role: db}
     - {role: web}
+    - {role: elasticsearch, elasticsearch_timezone: "Etc/UTC"}
   vars:
     atlas_django_listen_addr: 0.0.0.0 # So it can listen to requests from non-localhost
     atlas_db_user: atlas
