@@ -1,3 +1,6 @@
 [submodule "roles/elasticsearch"]
 	path = roles/elasticsearch
 	url = git://github.com/traackr/ansible-elasticsearch.git
+[submodule "roles/redis"]
+	path = roles/redis
+	url = https://github.com/Stouts/Stouts.redis
