@@ -1,17 +1,14 @@
 ---
 - name: install system packages
   apt: pkg={{item}} state=present
-  with_items: "{{ system_packages }}"
-  sudo: yes
+  with_items: system_packages
 - name: install virtualenv
   pip: name=virtualenv
-  sudo: yes
 - name: create srv dir
-  file: dest=/srv owner=vagrant group=vagrant state=directory
-  sudo: yes
+  file: dest={{prefix}} owner=vagrant group=vagrant state=directory recurse=yes
 - name: get code
-  git: repo=https://github.com/romsson/observatory_economic_complexity.git
-       dest=/srv/atlas
+  git: repo=git@github.com:cid-harvard/atlas-economic-complexity.git
+       dest={{prefix}}
        version=master
 
 # TODO: Install pip packages manually for now to avoid installing numpy, it
