@@ -17,11 +17,17 @@ To easily install a virtualized dev environment from scratch:
   instead of pip). Ansible automates installation of software packages and
   creation of configuration files, so you don’t have to manually install
   all the little components that are required to get the atlas to work.
-- Double check that the installs worked by running `ansible` and `vagrant` in
-  the command line, and by running virtualbox.
 - Put a bzip-compressed atlas db dump into the vagrant_shared directory and
   name it atlas_dump.sql.bz2.
-- Run `git clone https://github.com/makmanalp/atlas-playbooks && cd atlas-playbooks && mkdir atlas && vagrant up`
+- Double check that the installs worked by running `ansible` and `vagrant` in
+  the command line, and by running virtualbox.
+- Make sure you have an ssh-agent running (check with `ps aux | grep
+  ssh-agent`) and add your github ssh key with `ssh-add ~/.ssh/key_name.rsa`.
+  Ssh-agent lets you use your local ssh keys in the remote server. This allows
+  you to do a “git clone” on the virtual box even though your ssh keys are not
+  there. To learn more about ssh-agent, read this guide
+  (https://help.github.com/articles/using-ssh-agent-forwarding)
+- Run `git clone https://github.com/makmanalp/atlas-playbooks && cd atlas-playbooks && vagrant up`
 - Sit back and wait until all the stuff downloads. It'll download a 350mb VM
   image, around that much more for all the required python and ubuntu packages.
   Should take around 20 to 30 minutes. The “importing atlas DB” part takes the
