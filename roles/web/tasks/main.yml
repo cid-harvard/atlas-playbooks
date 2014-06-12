@@ -7,7 +7,7 @@
 - name: create srv dir
   file: dest={{prefix}} owner=vagrant group=vagrant state=directory recurse=yes
 - name: get code
-  git: repo=git@github.com:cid-harvard/atlas-economic-complexity.git
+  git: repo=https://github.com/cid-harvard/atlas-economic-complexity.git
        dest={{prefix}}
        version=master
 
