@@ -1,0 +1,7 @@
+---
+- name: workaround1 for mate bug
+  shell: echo "update new_observatory_hs4 set name_en = 'Mate' where id=79;" | mysql -u{{atlas_db_user}} -p{{atlas_db_password}} {{atlas_db_name}}
+- name: workaround2 for mate bug
+  shell: echo "update new_observatory_hs4 set name_en = 'Extracts, essences and concentrates, of coffee, tea or mate' where id=175;" | mysql -u{{atlas_db_user}} -p{{atlas_db_password}} {{atlas_db_name}}
+- name: workaround for missing sudan ranking data
+  shell: echo "insert into new_observatory_cy (id, country_id, year, eci, eci_rank, oppvalue, population, gdp, gni_pc, magic, pc_constant, pc_current, notpc_constant) VALUES (12735, 187, 2012, 0, 999, 0, 37195349, 31140000000, 0, 0.0000000246, 0.0000000246, 0.0000000269, 0.913805) ON DUPLICATE KEY UPDATE eci_rank=999;" | mysql -u{{atlas_db_user}} -p{{atlas_db_password}} {{atlas_db_name}}
