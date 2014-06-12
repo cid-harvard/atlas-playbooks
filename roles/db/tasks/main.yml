@@ -4,11 +4,11 @@
 - name: install system packages
   apt: pkg={{item}} state=present
   with_items: "{{ system_packages }}"
-  sudo: yes
 - name: create atlas user for vm
-  mysql_user: name=atlas password=atlas priv=*.*:ALL state=present
+  mysql_user: name={{atlas_db_user}} password={{atlas_db_password}} priv=*.*:ALL state=present
 - name: create atlas user for external connections
-  mysql_user: name=atlas password=atlas host=192.168.33.1 priv=*.*:ALL state=present
+  mysql_user: name={{atlas_db_user}} password={{atlas_db_password}} host=192.168.33.1 priv=*.*:ALL state=present
+  when: atlas_vagrant
 - name: create atlas db
-  mysql_db: name=atlas state=present
+  mysql_db: name={{atlas_db_name}} state=present
   notify: import atlas db

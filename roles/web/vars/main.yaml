@@ -7,4 +7,4 @@ system_packages:
     - libmysqlclient-dev
     - python-dev
 prefix: /srv/atlas
-webuser: vagrant
+atlas_webuser: vagrant

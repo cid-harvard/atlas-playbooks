@@ -26,7 +26,7 @@
 - name: generate django settings
   template: src=settings_local.py dest={{prefix}}/django_files/atlas/
 - name: Set permissions to django directory
-  file: owner={{webuser}} recurse=yes dest={{prefix}}
+  file: owner={{atlas_webuser}} recurse=yes dest={{prefix}}
 
 #TODO: Doing this via shell for now because django_manage doesn't let you pass
 #a listen ip to runserver. Don't do this in production
