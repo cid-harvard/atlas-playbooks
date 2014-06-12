@@ -6,5 +6,6 @@
       - workaround2 for mate bug
       - workaround for missing sudan ranking data
       - django syncdb
+      - Generate search index
 # Quick fixes to the data
 - include: hacks.yml
