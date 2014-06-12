@@ -12,7 +12,3 @@
 - name: create atlas db
   mysql_db: name={{atlas_db_name}} state=present
   notify: import atlas db
-# Quick fixes to the data
-- include: ../tasks/hacks.yml
-  tags:
-      - hacks
