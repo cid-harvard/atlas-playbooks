@@ -9,7 +9,7 @@
 - name: get code
   git: repo=https://github.com/cid-harvard/atlas-economic-complexity.git
        dest={{prefix}}
-       version=no_numpy
+       version=beta
 
 - name: install atlas python requirements
   pip: requirements={{prefix}}/requirements.txt virtualenv={{prefix}}/env/
