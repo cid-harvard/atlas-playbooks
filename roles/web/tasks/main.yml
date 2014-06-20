@@ -11,18 +11,8 @@
        dest={{prefix}}
        version=no_numpy
 
-# TODO: Install pip packages manually for now to avoid installing numpy, it
-# takes forever. Also django version not specified in requirements.txt
-#- name: install atlas python requirements
-#  pip: requirements={{prefix}}/requirements.txt virtualenv={{prefix}}/env/
 - name: install atlas python requirements
-  pip: name={{item}} virtualenv={{prefix}}/env/
-  with_items:
-    - Django==1.4.5
-    - MySQL-python
-    - django-redis
-    - msgpack-python
-    - pycrypto
+  pip: requirements={{prefix}}/requirements.txt virtualenv={{prefix}}/env/
 - name: generate django settings
   template: src=settings_local.py dest={{prefix}}/django_files/atlas/
 - name: Set permissions to django directory

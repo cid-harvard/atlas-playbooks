@@ -6,5 +6,7 @@ system_packages:
     - python-pip
     - libmysqlclient-dev
     - python-dev
+    - libffi-dev
+    - libcairo2-dev
 prefix: /srv/atlas
 atlas_webuser: vagrant
