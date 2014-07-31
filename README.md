@@ -41,22 +41,25 @@ To easily install a virtualized dev environment from scratch:
   django to answer requests that come from outside the VM.
   - Go to http://127.0.0.1:8000/ with your browser on the outside.
 
-
-More Info
----------
-- Run "vagrant ssh" to get into the box, "vagrant suspend" to save the state of
-  the box (akin to “hibernate”) and “vagrant halt” to stop it completely.
+Basic Usage -----------
+- Run “vagrant up” to start the box, "vagrant ssh" to get into the box,
+  "vagrant suspend" to save the state of the box (akin to “hibernate”) and
+  “vagrant halt” to stop it completely.
 - There are two shared directories with the VM. Any change made within the VM
   reflects to the outside of the VM, and vice versa.
     * `vagrant_shared/`: For moving over large SQL dumps etc.
     * `atlas/`: Contains the main source for the site, a checkout of the
-      atlas-economic-complexity repo. You can write / edit code on this.
+      atlas-economic-complexity repo. You can write / edit code on this. Inside
+      the box, this maps to the /srv/atlas directory.
 - The usual development process involves working with your editor on the
   “atlas” directory outside the VM and have those changes reflected
-  automatically to the inside. You ssh in to stop / start processes. If you’re
-  going to make configuration changes, it might make sense to add them to the
-  ansible playbooks instead of manually doing them if you want to preserve
-  those changes and have them reflected across all installations.
+  automatically to the inside. You ssh in to stop / start the server processes.
+  If you’re going to make configuration changes, it might make sense to add
+  them to the ansible playbooks instead of manually doing them if you want to
+  preserve those changes and have them reflected across all installations.
+
+More Info
+---------
 - Run “git pull” to get the latest version of the playbooks from git, and then "vagrant provision” to get vagrant to do all the new installation / configuration needed.
 - Run "vagrant destroy" and then “vagrant up” to get a fresh reinstallation.
 - Run "vagrant help" for more info on how to stop, start, reload, destroy the virtual box.
