@@ -5,3 +5,21 @@
   shell: echo "update new_observatory_hs4 set name_en = 'Extracts, essences and concentrates, of coffee, tea or mate' where id=175;" | mysql -u{{atlas_db_user}} -p{{atlas_db_password}} {{atlas_db_name}}
 - name: workaround for missing sudan ranking data
   shell: echo "insert into new_observatory_cy (id, country_id, year, eci, eci_rank, oppvalue, population, gdp, gni_pc, magic, pc_constant, pc_current, notpc_constant) VALUES (12735, 187, 2012, 0, 999, 0, 37195349, 31140000000, 0, 0.0000000246, 0.0000000246, 0.0000000269, 0.913805) ON DUPLICATE KEY UPDATE eci_rank=999;" | mysql -u{{atlas_db_user}} -p{{atlas_db_password}} {{atlas_db_name}}
+- name: add flag to specify originally included countries
+  shell: echo "alter table new_observatory_country add originally_included
+      boolean default 0; update new_observatory_country set
+      originally_included=1 where name_3char in ('ago', 'alb', 'are', 'arg',
+      'aus', 'aut', 'aze', 'bel', 'bgd', 'bgr', 'bih', 'blr', 'bol', 'bra',
+      'bwa', 'can', 'che', 'chl', 'chn', 'civ', 'cmr', 'cog', 'col', 'cri',
+      'cub', 'cze', 'deu', 'dnk', 'dom', 'dza', 'ecu', 'egy', 'esp', 'est',
+      'eth', 'fin', 'fra', 'gab', 'gbr', 'geo', 'gha', 'gin', 'grc', 'gtm',
+      'hkg', 'hnd', 'hrv', 'hun', 'idn', 'ind', 'irl', 'irn', 'isr', 'ita',
+      'jam', 'jor', 'jpn', 'kaz', 'ken', 'kgz', 'khm', 'kor', 'kwt', 'lao',
+      'lbn', 'lbr', 'lby', 'lka', 'ltu', 'lva', 'mar', 'mda', 'mdg', 'mex',
+      'mkd', 'mli', 'mng', 'moz', 'mrt', 'mus', 'mwi', 'mys', 'nam', 'nga',
+      'nic', 'nld', 'nor', 'nzl', 'omn', 'pak', 'pan', 'per', 'phl', 'png',
+      'pol', 'prt', 'pry', 'qat', 'rou', 'rus', 'sau', 'sdn', 'sen', 'sgp',
+      'slv', 'srb', 'svk', 'svn', 'swe', 'syr', 'tha', 'tjk', 'tkm', 'tto',
+      'tun', 'tur', 'tza', 'uga', 'ukr', 'ury', 'usa', 'uzb', 'ven', 'vnm',
+      'yem', 'zaf', 'zmb', 'zwe');" | mysql -u{{atlas_db_user}} -p{{atlas_db_password}} {{atlas_db_name}}
+

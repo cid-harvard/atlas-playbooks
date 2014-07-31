@@ -5,6 +5,7 @@
       - workaround2 for mate bug
       - workaround2 for mate bug
       - workaround for missing sudan ranking data
+      - add flag to specify originally included countries
       - django syncdb
       - Generate search index
 # Quick fixes to the data
