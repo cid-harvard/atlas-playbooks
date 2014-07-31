@@ -49,3 +49,5 @@ EXPORT_IMAGE_HEIGHT = 520
 PHANTOM_JS_EXECUTABLE = '/usr/bin/phantomjs'
 PHANTOM_JS_SCRIPT = '{{atlas_prefix}}/media/js/explore/generate.svg.js'
 BACKGROUND_CACHE_URL_HOST = 'localhost:8000'
+
+ALLOWED_HOSTS = ["*"]
