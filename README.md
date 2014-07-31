@@ -41,7 +41,8 @@ To easily install a virtualized dev environment from scratch:
   django to answer requests that come from outside the VM.
   - Go to http://127.0.0.1:8000/ with your browser on the outside.
 
-Basic Usage -----------
+Basic Usage
+-----------
 - Run “vagrant up” to start the box, "vagrant ssh" to get into the box,
   "vagrant suspend" to save the state of the box (akin to “hibernate”) and
   “vagrant halt” to stop it completely.
