@@ -26,8 +26,10 @@ To easily install a virtualized dev environment from scratch:
   - Run `git clone https://github.com/makmanalp/atlas-playbooks && cd atlas-playbooks`
 
 3. Make sure you have the data (30s - 5min):
-  - Put a bzip-compressed atlas db dump into the vagrant_shared directory and
-  name it atlas_dump.sql.bz2.
+  - Put a gzip-compressed atlas db dump into the vagrant_shared directory and
+  name it atlas_dump.sql.gz. You can find it here:
+  https://5f8e910dc73e5b802e61-c8f472c1dc7a646930d1a89882f69f37.ssl.cf5.rackcdn.com/atlas_dump.sql.gz
+  and the file should have a shasum of 903e69a3ff70ad33f434abd9cf7726fd45fa5fdd.
 
 4. Begin installing (30min)
   - Do `vagrant up`. Sit back and wait until all the stuff downloads. It'll download a 350mb VM
