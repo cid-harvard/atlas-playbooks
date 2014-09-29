@@ -4,6 +4,7 @@
   roles:
     - role: db
     - role: redis
+      redis_ppa:
       redis_enabled: yes
       redis_dbfilename: redis.rdb
       redis_db_dir: /var/db/redis
