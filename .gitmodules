@@ -4,3 +4,6 @@
 [submodule "roles/redis"]
 	path = roles/redis
 	url = https://github.com/Stouts/Stouts.redis
+[submodule "roles/nginx"]
+	path = roles/nginx
+	url = https://github.com/ANXS/nginx
