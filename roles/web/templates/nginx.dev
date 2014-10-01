@@ -1,0 +1,26 @@
+server {
+    listen 8000 default_server;
+
+    set $project_path {{atlas_prefix}};
+
+    # Serve static files directly instead of through Django
+    location ~ ^/(static|media)/(.*)$ {
+        alias $project_path/$1/$2;
+    }
+
+    # Serve main site
+    location / {
+
+        proxy_set_header Host $http_host;
+
+        # Redirect bot requests to phantomjs pre-renderer
+        if ($args ~ _escaped_fragment_) {
+            proxy_pass http://127.0.0.1:5000;
+            break;
+        }
+
+        # Otherwise serve main django on root dir
+        proxy_pass http://127.0.0.1:8001;
+    }
+
+}
