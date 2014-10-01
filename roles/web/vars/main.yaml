@@ -8,5 +8,7 @@ system_packages:
     - python-dev
     - libffi-dev
     - libcairo2-dev
+    - nginx
+    - phantomjs
 prefix: /srv/atlas
 atlas_webuser: vagrant
