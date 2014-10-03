@@ -3,6 +3,13 @@ server {
 
     set $project_path {{atlas_prefix}};
 
+    # Temp files only for phantomjs process
+    location ~ ^/(celery-temp-file-.*)$ {
+        allow 127.0.0.1;
+        deny all;
+        alias /tmp/ramdisk/$1;
+    }
+
     # Serve static files directly instead of through Django
     location ~ ^/(static|media)/(.*)$ {
         alias $project_path/$1/$2;
