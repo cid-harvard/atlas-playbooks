@@ -39,7 +39,7 @@ To easily install a virtualized dev environment from scratch:
 5. Test it out!
   - Run `vagrant ssh` to get in, then `cd /srv/atlas/` and `source
   env/bin/activate` to get into the virtualenv. Then go in `django_files` and
-  run `manage.py runserver 0.0.0.0:8000`. The 0.0.0.0 is important to get
+  run `manage.py runserver 0.0.0.0:8001`. The 0.0.0.0 is important to get
   django to answer requests that come from outside the VM.
   - Go to http://127.0.0.1:8000/ with your browser on the outside.
 
