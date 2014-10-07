@@ -21,11 +21,15 @@
 - name: install PT Sans Narrow for static image rendering
   copy: src=PTN57F.ttf dest=/home/{{atlas_webuser}}/.fonts/
 
-- name: copy in nginx config files
-  template: src=nginx.dev dest=/etc/nginx/sites-enabled/dev
+- name: copy in nginx site config file
+  template: src=nginx.dev dest=/etc/nginx/sites-enabled/dev backup=yes
+
+- name: copy in nginx main config files
+  template: src=nginx.conf.dev dest=/etc/nginx/nginx.conf backup=yes
 
 - name: reload nginx service
   service: name=nginx state=reloaded
+
 - name: add user for celery
   user: name=celery shell=/bin/false home= createhome=no system=yes
 
