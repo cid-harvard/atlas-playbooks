@@ -30,11 +30,11 @@
 - name: reload nginx service
   service: name=nginx state=reloaded
 
-- name: add user for celery
-  user: name=celery shell=/bin/false home= createhome=no system=yes
-
-- name: make log directory for celery
-  file: owner=celery recurse=yes dest=/var/log/celery/ state=directory
+#- name: add user for celery
+#  user: name=celery shell=/bin/false home= createhome=no system=yes
+#
+#- name: make log directory for celery
+#  file: owner=celery recurse=yes dest=/var/log/celery/ state=directory
 
 #TODO: Doing this via shell for now because django_manage doesn't let you pass
 #a listen ip to runserver. Don't do this in production
