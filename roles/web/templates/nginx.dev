@@ -15,6 +15,11 @@ server {
         alias $project_path/$1/$2;
     }
 
+    # Also serve static thumbnails of visualizations
+    location ~ ^/static_image/(.*)$ {
+        alias {{static_image_path}}/$1;
+    }
+
     # Serve main site
     location / {
         proxy_set_header Host $http_host;
