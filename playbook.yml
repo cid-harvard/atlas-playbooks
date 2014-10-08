@@ -24,4 +24,5 @@
     atlas_db_port: 3306
     atlas_prefix: /srv/atlas
     atlas_vagrant: true
+    atlas_dev: false
 
