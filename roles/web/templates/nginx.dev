@@ -17,7 +17,7 @@ server {
 
     # Also serve static thumbnails of visualizations
     location ~ ^/static_image/(.*)$ {
-        alias {{atlas_static_image_path}}/$1;
+        alias {{atlas_static_image_path}}$1;
     }
 
     # Serve main site
