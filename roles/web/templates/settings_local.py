@@ -42,10 +42,12 @@ INTERNAL_IPS = ('127.0.0.1',
 DEV = False
 DEBUG = True
 
+STATIC_IMAGE_PATH = "{{atlas_static_image_path}}"
+
+# These are old - safe to remove?
 STATIC_IMAGE_MODE = 'PNG'
 EXPORT_IMAGE_WIDTH = 748
 EXPORT_IMAGE_HEIGHT = 520
-
 PHANTOM_JS_EXECUTABLE = '/usr/bin/phantomjs'
 PHANTOM_JS_SCRIPT = '{{atlas_prefix}}/media/js/explore/generate.svg.js'
 BACKGROUND_CACHE_URL_HOST = 'localhost:8000'
