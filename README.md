@@ -24,6 +24,7 @@ To easily install a virtualized dev environment from scratch:
 
 2. Clone the code (30s):
   - Run `git clone https://github.com/cid-harvard/atlas-playbooks.git && cd atlas-playbooks`
+  - Run `git submodule init && git submodule update` to get all the submodules. 
 
 3. Make sure you have the data (30s - 5min):
   - Put a gzip-compressed atlas db dump into the vagrant_shared directory and
