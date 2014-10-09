@@ -38,7 +38,9 @@
 
 - name: add dir for images
   file: owner=celery dest=/var/db/images/ recurse=yes state=directory
-  tags: ["debug"]
+
+- name: add temp dir for celery task intermediate data
+  file: owner=celery dest=/tmp/ramdisk/ recurse=yes state=directory
 
 
 #TODO: Doing this via shell for now because django_manage doesn't let you pass

@@ -14,6 +14,7 @@
       elasticsearch_plugins:
           - name: 'mobz/elasticsearch-head'
     - role: web
+      tags: ["web"]
     - role: elasticsearch_index
   vars:
     atlas_django_listen_addr: 0.0.0.0 # So it can listen to requests from non-localhost
