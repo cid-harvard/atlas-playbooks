@@ -37,7 +37,7 @@
   file: owner=celery recurse=yes dest=/var/log/celery/ state=directory
 
 - name: add dir for images
-  file: owner=celery dest=/var/db/images/ recurse=yes state=directory
+  file: owner=vagrant mode=0777 dest=/var/db/images/ recurse=yes state=directory
 
 # TODO: this file has owner "vagrant" but in prod it should have celery or www-data
 - name: add temp dir for celery task intermediate data
