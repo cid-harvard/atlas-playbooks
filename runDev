@@ -1,0 +1,5 @@
+#!/bin/bash
+# Convenience script to run dev environment
+
+vagrant up
+vagrant ssh -c "cd /srv/atlas/; source env/bin/activate; cd django_files; ./manage.py runserver 0.0.0.0:8001"
