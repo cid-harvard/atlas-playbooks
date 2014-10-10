@@ -37,11 +37,11 @@
   file: owner=celery recurse=yes dest=/var/log/celery/ state=directory
 
 - name: add dir for images
-  file: owner=vagrant mode=0777 dest=/var/db/images/ recurse=yes state=directory
+  file: owner={{atlas_webuser}} mode=0777 dest=/var/db/images/ recurse=yes state=directory
 
 # TODO: this file has owner "vagrant" but in prod it should have celery or www-data
 - name: add temp dir for celery task intermediate data
-  file: owner=vagrant group=www-data mode=0777 dest=/tmp/ramdisk/ recurse=yes state=directory
+  file: owner={{atlas_webuser}} group=www-data mode=0777 dest=/tmp/ramdisk/ recurse=yes state=directory
 
 
 #TODO: Doing this via shell for now because django_manage doesn't let you pass
