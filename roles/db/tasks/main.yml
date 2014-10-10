@@ -12,11 +12,9 @@
 - name: Check if db file is there
   stat: path={{atlas_db_import_location}}
   register: atlas_db_dump_exists
-  tags: ["debug"]
 - name: If db file is not there, download
   get_url: url=https://5f8e910dc73e5b802e61-c8f472c1dc7a646930d1a89882f69f37.ssl.cf5.rackcdn.com/atlas_dump.sql.gz dest=/vagrant_shared/atlas_dump.sql.gz sha256sum=1892d62140cfb4feb8399b041449b57265d1923e8a2edb3a40a7b06b9d399b14
   when: atlas_db_dump_exists.stat.exists == False
-  tags: ["debug"]
 - name: create atlas db
   mysql_db: name={{atlas_db_name}} state=present
   notify: import atlas db
