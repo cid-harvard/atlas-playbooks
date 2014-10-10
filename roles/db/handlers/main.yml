@@ -1,5 +1,5 @@
 - name: import atlas db
-  mysql_db: name={{atlas_db_name}} state=import target=/vagrant_shared/atlas_dump.sql.gz
+  mysql_db: name={{atlas_db_name}} state=import target={{atlas_db_import_location}}
   notify:
       - workaround1 for mate bug
       - workaround2 for mate bug
