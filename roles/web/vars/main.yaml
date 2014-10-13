@@ -10,5 +10,3 @@ system_packages:
     - libcairo2-dev
     - nginx
     - phantomjs
-prefix: /srv/atlas
-atlas_webuser: vagrant
