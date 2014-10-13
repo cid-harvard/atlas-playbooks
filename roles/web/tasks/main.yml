@@ -5,21 +5,23 @@
 - name: install virtualenv
   pip: name=virtualenv
 - name: create srv dir
-  file: dest={{prefix}} owner={{atlas_webuser}} group={{atlas_webuser}} state=directory recurse=yes
+  file: dest={{atlas_prefix}} owner={{atlas_webuser}} group={{atlas_webuser}} state=directory recurse=yes
 - name: get code
   git: repo=https://github.com/cid-harvard/atlas-economic-complexity.git
-       dest={{prefix}}
+       dest={{atlas_prefix}}
        version=beta
 
 - name: install atlas python requirements
-  pip: requirements={{prefix}}/requirements.txt virtualenv={{prefix}}/env/
+  pip: requirements={{atlas_prefix}}/requirements.txt virtualenv={{atlas_prefix}}/env/
 - name: generate django settings
-  template: src=settings_local.py dest={{prefix}}/django_files/atlas/
+  template: src=settings_local.py dest={{atlas_prefix}}/django_files/atlas/
 - name: Set permissions to django directory
-  file: owner={{atlas_webuser}} recurse=yes dest={{prefix}}
+  file: owner={{atlas_webuser}} recurse=yes dest={{atlas_prefix}}
 
 - name: install PT Sans Narrow for static image rendering
   copy: src=PTN57F.ttf dest=/home/{{atlas_webuser}}/.fonts/
+
+#- name: Remove existing nginx
 
 - name: copy in nginx site config file
   template: src=nginx.dev dest=/etc/nginx/sites-enabled/dev
