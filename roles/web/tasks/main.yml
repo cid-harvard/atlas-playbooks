@@ -6,6 +6,8 @@
   pip: name=virtualenv
 - name: create srv dir
   file: dest={{atlas_prefix}} owner={{atlas_webuser}} group={{atlas_webuser}} state=directory recurse=yes
+- name: create log dir
+  file: dest=/var/log/django/ owner={{atlas_webuser}} group={{atlas_webuser}} state=directory recurse=yes
 - name: get code
   git: repo=https://github.com/cid-harvard/atlas-economic-complexity.git
        dest={{atlas_prefix}}
