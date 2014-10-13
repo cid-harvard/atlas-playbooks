@@ -10,5 +10,6 @@ atlas_prefix: /srv/atlas
 atlas_static_image_path: /var/db/images/
 atlas_static_image_phantomjs_url: http://127.0.0.1:8000/
 atlas_webuser: vagrant
+atlas_environment: dev
 atlas_vagrant: true
 atlas_dev: true

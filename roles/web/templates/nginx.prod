@@ -1,0 +1,29 @@
+server {
+    listen 80 default_server;
+
+    set $project_path {{atlas_prefix}};
+
+    # Temp files only for phantomjs process
+    location ~ ^/(celery-temp-file-.*)$ {
+        allow 127.0.0.1;
+        deny all;
+        alias /tmp/ramdisk/$1;
+    }
+
+    # Serve static files directly instead of through Django
+    location ~ ^/(static|media)/(.*)$ {
+        alias $project_path/$1/$2;
+    }
+
+    # Also serve static thumbnails of visualizations
+    location ~ ^/static_image/(.*)$ {
+        alias {{atlas_static_image_path}}$1;
+    }
+
+    # Serve main site
+    location / {
+        proxy_set_header Host $http_host;
+        proxy_pass http://127.0.0.1:8001;
+    }
+
+}

@@ -24,10 +24,10 @@
 #- name: Remove existing nginx
 
 - name: copy in nginx site config file
-  template: src=nginx.dev dest=/etc/nginx/sites-enabled/dev
+  template: src=nginx.{{atlas_environment}} dest=/etc/nginx/sites-enabled/{{atlas_environment}}
 
 - name: copy in nginx main config files
-  template: src=nginx.conf.dev dest=/etc/nginx/nginx.conf
+  template: src=nginx.conf.{{atlas_environment}} dest=/etc/nginx/nginx.conf
 
 - name: reload nginx service
   service: name=nginx state=reloaded
