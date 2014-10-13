@@ -16,6 +16,12 @@ server {
         expires 15m;
     }
 
+    # Serve static files directly instead of through Django
+    location ~ ^/CACHE/(.*)$ {
+        alias $project_path/CACHE/$1;
+        expires max;
+    }
+
     # Also serve static thumbnails of visualizations
     location ~ ^/static_image/(.*)$ {
         alias {{atlas_static_image_path}}$1;
