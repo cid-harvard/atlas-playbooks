@@ -60,6 +60,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       ansible.playbook = "playbook.yml"
       ansible.verbose = "v"
       ansible.raw_ssh_args = ['-o ForwardAgent=yes']
+      ansible.groups = {
+        "dev" => "default"
+      }
       # Use this to override ansible playbook variables
       ansible.extra_vars = { var1: "value1"}
   end
