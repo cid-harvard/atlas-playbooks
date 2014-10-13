@@ -22,10 +22,10 @@
   copy: src=PTN57F.ttf dest=/home/{{atlas_webuser}}/.fonts/
 
 - name: copy in nginx site config file
-  template: src=nginx.dev dest=/etc/nginx/sites-enabled/dev backup=yes
+  template: src=nginx.dev dest=/etc/nginx/sites-enabled/dev
 
 - name: copy in nginx main config files
-  template: src=nginx.conf.dev dest=/etc/nginx/nginx.conf backup=yes
+  template: src=nginx.conf.dev dest=/etc/nginx/nginx.conf
 
 - name: reload nginx service
   service: name=nginx state=reloaded
