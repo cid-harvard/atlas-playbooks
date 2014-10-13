@@ -13,11 +13,13 @@ server {
     # Serve static files directly instead of through Django
     location ~ ^/(static|media)/(.*)$ {
         alias $project_path/$1/$2;
+        expires 15m;
     }
 
     # Also serve static thumbnails of visualizations
     location ~ ^/static_image/(.*)$ {
         alias {{atlas_static_image_path}}$1;
+        expires 15m;
     }
 
     # Serve main site
