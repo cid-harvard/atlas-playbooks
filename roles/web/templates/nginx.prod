@@ -28,6 +28,9 @@ server {
         expires 15m;
     }
 
+    # Ped130 redirect
+    rewrite ^/ped130(/.*)$ $1 last;
+
     # Serve main site
     location / {
 
