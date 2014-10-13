@@ -26,6 +26,7 @@
     atlas_db_import_location: /vagrant_shared/atlas_dump.sql.gz
     atlas_prefix: /srv/atlas
     atlas_static_image_path: /var/db/images/
+    atlas_static_image_phantomjs_url: http://127.0.0.1:80/
     atlas_webuser: ubuntu
     atlas_vagrant: true
     atlas_dev: false

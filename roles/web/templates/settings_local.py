@@ -43,6 +43,7 @@ DEV = False
 DEBUG = True
 
 STATIC_IMAGE_PATH = "{{atlas_static_image_path}}"
+STATIC_IMAGE_PHANTOMJS_URL = "{{atlas_static_image_phantomjs_url}}"
 
 # These are old - safe to remove?
 STATIC_IMAGE_MODE = 'PNG'
