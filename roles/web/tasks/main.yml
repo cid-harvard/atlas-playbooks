@@ -48,7 +48,7 @@
   file: owner={{atlas_webuser}} group=www-data mode=0777 dest=/tmp/ramdisk/ recurse=yes state=directory
 
 - name: copy in uwsgi config
-  template: src=atlas.uwsgi.ini dest=/etc/nginx/sites-enabled/atlas.ini
+  template: owner={{atlas_webuser}} src=atlas.uwsgi.ini dest=/etc/uwsgi/apps-enabled/atlas.ini
 
 #TODO: Doing this via shell for now because django_manage doesn't let you pass
 #a listen ip to runserver. Don't do this in production
