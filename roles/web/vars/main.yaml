@@ -10,3 +10,4 @@ system_packages:
     - libcairo2-dev
     - nginx
     - phantomjs
+    - supervisor
