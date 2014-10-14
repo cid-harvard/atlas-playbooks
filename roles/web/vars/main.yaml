@@ -13,3 +13,4 @@ system_packages:
     - supervisor
     - uwsgi
     - uwsgi-plugin-python
+    - cssmin

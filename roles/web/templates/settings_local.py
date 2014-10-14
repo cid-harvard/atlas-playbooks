@@ -56,6 +56,13 @@ BACKGROUND_CACHE_URL_HOST = 'localhost:8000'
 ALLOWED_HOSTS = ["*"]
 
 COMPRESS_ROOT = '{{atlas_prefix}}/media/'
+COMPRESS_CSS_FILTERS = [
+    'compressor.filters.css_default.CssAbsoluteFilter',
+    'compressor.filters.cssmin.CSSMinFilter'
+]
+COMPRESS_JS_FILTERS = [
+    'compressor.filters.jsmin.JSMinFilter',
+]
 
 LOGGING = {
     'version': 1,
