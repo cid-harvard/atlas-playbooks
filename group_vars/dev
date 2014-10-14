@@ -9,6 +9,8 @@ atlas_db_import_location: /vagrant_shared/atlas_dump.sql.gz
 atlas_prefix: /srv/atlas
 atlas_static_image_path: /var/db/images/
 atlas_static_image_phantomjs_url: http://127.0.0.1:8000/
+atlas_celery_workers_max: 1
+atlas_celery_workers_min: 1
 atlas_webuser: vagrant
 atlas_environment: dev
 atlas_vagrant: true
