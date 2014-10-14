@@ -55,6 +55,8 @@ BACKGROUND_CACHE_URL_HOST = 'localhost:8000'
 
 ALLOWED_HOSTS = ["*"]
 
+COMPRESS_ROOT = '{{atlas_prefix}}/media/'
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
