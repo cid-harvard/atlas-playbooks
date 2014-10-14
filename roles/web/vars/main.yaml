@@ -11,3 +11,4 @@ system_packages:
     - nginx
     - phantomjs
     - supervisor
+    - uwsgi
