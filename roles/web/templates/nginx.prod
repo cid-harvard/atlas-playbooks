@@ -49,7 +49,7 @@ server {
 
     uwsgi_pass  django;
     #proxy_set_header Host $http_host;
-    include /etc/nginx/uwsgi_params
+    include /etc/nginx/uwsgi_params;
     }
 
 }
