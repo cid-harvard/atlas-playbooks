@@ -50,6 +50,9 @@
 - name: copy in uwsgi config
   template: owner={{atlas_webuser}} src=atlas.uwsgi.ini dest=/etc/uwsgi/apps-enabled/atlas.ini
 
+- name: copy in supervisor config
+  template: owner={{atlas_webuser}} src=supervisor.atlas.conf dest=/etc/supervisor/conf.d/atlas.conf
+
 #TODO: Doing this via shell for now because django_manage doesn't let you pass
 #a listen ip to runserver. Don't do this in production
 #- name: Run server
