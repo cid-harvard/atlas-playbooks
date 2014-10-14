@@ -39,8 +39,8 @@ INTERNAL_IPS = ('127.0.0.1',
                 '10.0.2.2') #For Django debug toolbar
 
 # FOR VERBOSE JS OUTPUT
-DEV = False
-DEBUG = True
+DEBUG = {{atlas_environment == 'dev'}}
+DEV = not DEBUG
 
 STATIC_IMAGE_PATH = "{{atlas_static_image_path}}"
 STATIC_IMAGE_PHANTOMJS_URL = "{{atlas_static_image_phantomjs_url}}"
