@@ -1,3 +1,7 @@
+upstream django {
+    server 127.0.0.1:3031;
+}
+
 server {
     listen 80 default_server;
     charset utf-8;
@@ -38,12 +42,14 @@ server {
         # Cache dropdown requests on client
         location ~ ^/api/dropdowns/.*$ {
             expires 15m;
-            proxy_set_header Host $http_host;
-            proxy_pass http://127.0.0.1:8001;
+            uwsgi_pass  django;
+            #proxy_set_header Host $http_host;
+            include /etc/nginx/uwsgi_params
         }
 
-        proxy_set_header Host $http_host;
-        proxy_pass http://127.0.0.1:8001;
+    uwsgi_pass  django;
+    #proxy_set_header Host $http_host;
+    include /etc/nginx/uwsgi_params
     }
 
 }
