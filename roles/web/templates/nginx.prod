@@ -12,7 +12,7 @@ server {
     location /status {
         stub_status on;
         access_log off;
-        allow 54.172.14.119;
+        allow 127.0.0.1;
         deny all;
     }
 
