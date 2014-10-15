@@ -8,28 +8,37 @@ server {
 
     set $project_path {{atlas_prefix}};
 
+    # Status URL for monitoring
+    location /status {
+        stub_status;
+    }
+
     # Temp files only for phantomjs process
     location ~ ^/(celery-temp-file-.*)$ {
         allow 127.0.0.1;
         deny all;
         alias /tmp/ramdisk/$1;
+        access_log  off;
     }
 
     # Serve static files directly instead of through Django
     location ~ ^/(static|media)/(.*)$ {
         alias $project_path/$1/$2;
+        access_log  off;
         expires 15m;
     }
 
     # Serve static files directly instead of through Django
     location ~ ^/CACHE/(.*)$ {
         alias $project_path/CACHE/$1;
+        access_log  off;
         expires max;
     }
 
     # Also serve static thumbnails of visualizations
     location ~ ^/static_image/(.*)$ {
         alias {{atlas_static_image_path}}$1;
+        access_log  off;
         expires 15m;
     }
 
