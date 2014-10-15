@@ -34,7 +34,7 @@ server {
     }
 
     # Ped130 redirect
-    rewrite ^/ped130(/.*)$ $1 last;
+    rewrite ^/ped130/(.*)$ /$1 last;
 
     # Serve main site
     location / {
