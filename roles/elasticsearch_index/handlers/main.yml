@@ -1,7 +1,7 @@
 - name: Generate search index
   django_manage: >
       command=index_questions
-      app_path={{prefix}}/django_files/
-      virtualenv={{prefix}}/env/
+      app_path={{atlas_prefix}}/django_files/
+      virtualenv={{atlas_prefix}}/env/
   tags:
       - elasticsearch_index
