@@ -23,7 +23,8 @@
 - name: install PT Sans Narrow for static image rendering
   copy: src=PTN57F.ttf dest=/home/{{atlas_webuser}}/.fonts/
 
-#- name: Remove existing nginx
+- name: Remove existing nginx config
+  file: src=/etc/nginx/sites-enabled/default state=absent
 
 - name: copy in nginx site config file
   template: src=nginx.{{atlas_environment}} dest=/etc/nginx/sites-enabled/{{atlas_environment}}
