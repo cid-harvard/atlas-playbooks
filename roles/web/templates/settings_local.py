@@ -23,8 +23,6 @@ TEMPLATE_DIRS = (
 
 SECRET_KEY = 'my_pets_name_is_eloise'
 
-REDIS = False
-
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache'
