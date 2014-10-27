@@ -3,16 +3,17 @@
   sudo: yes
   roles:
     - role: db
+      when: atlas_environment == 'dev'
     - role: redis
       redis_ppa:
       redis_enabled: yes
       redis_dbfilename: redis.rdb
       redis_db_dir: /var/db/redis
       redis_maxmemory_policy: allkeys-lru
+      when: atlas_environment == 'dev'
     - role: elasticsearch
       elasticsearch_timezone: "Etc/UTC"
       elasticsearch_plugins:
           - name: 'mobz/elasticsearch-head'
     - role: web
-      tags: ["web"]
     - role: elasticsearch_index

@@ -8,7 +8,7 @@
   mysql_user: name={{atlas_db_user}} password={{atlas_db_password}} priv=*.*:ALL state=present
 - name: create atlas user for external connections
   mysql_user: name={{atlas_db_user}} password={{atlas_db_password}} host=192.168.33.1 priv=*.*:ALL state=present
-  when: atlas_vagrant
+  when: atlas_environment == 'dev'
 - name: Check if db file is there
   stat: path={{atlas_db_import_location}}
   register: atlas_db_dump_exists

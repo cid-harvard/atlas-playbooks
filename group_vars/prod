@@ -13,5 +13,3 @@ atlas_celery_workers_max: 6
 atlas_celery_workers_min: 2
 atlas_webuser: ubuntu
 atlas_environment: prod
-atlas_vagrant: false
-atlas_dev: false
