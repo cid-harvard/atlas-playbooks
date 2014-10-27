@@ -3,7 +3,7 @@
   apt: update_cache=yes
 - name: install system packages
   apt: pkg={{item}} state=present
-  with_items: "{{ system_packages }}"
+  with_items: system_packages
 - name: create atlas user for vm
   mysql_user: name={{atlas_db_user}} password={{atlas_db_password}} priv=*.*:ALL state=present
 - name: create atlas user for external connections
