@@ -41,6 +41,9 @@
 - name: make log directory for celery
   file: owner=celery recurse=yes dest=/var/log/celery/ state=directory
 
+- name: copy in celery config file
+  template: src=celeryconfig.py dest={{atlas_prefix}}/django_files/atlas/
+
 - name: add dir for images
   file: owner={{atlas_webuser}} mode=0777 dest=/var/db/images/ recurse=yes state=directory
 
