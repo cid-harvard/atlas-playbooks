@@ -9,6 +9,16 @@ DATABASES = {
     }
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'redis_cache.cache.RedisCache',
+        'LOCATION': '{{atlas_redis_connection_string}}',
+        'OPTIONS': {
+            "PARSER_CLASS": "redis.connection.HiredisParser"
+        }
+    },
+}
+
 STATICFILES_DIRS = (
     "{{atlas_prefix}}/media/",
 )
@@ -22,12 +32,6 @@ TEMPLATE_DIRS = (
 )
 
 SECRET_KEY = 'my_pets_name_is_eloise'
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.dummy.DummyCache'
-    },
-}
 
 HTTP_HOST = '/'
 DB_PREFIX = 'new_'
