@@ -21,7 +21,7 @@
   file: owner={{atlas_webuser}} recurse=yes dest={{atlas_prefix}}
 
 - name: install PT Sans Narrow for static image rendering
-  copy: src=PTN57F.ttf dest=/home/{{atlas_webuser}}/.fonts/
+  copy: src=PTN57F.ttf owner={{atlas_webuser}} dest=/home/{{atlas_webuser}}/.fonts/
 
 - name: Remove existing nginx config
   file: path=/etc/nginx/sites-enabled/default state=absent
