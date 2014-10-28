@@ -63,14 +63,3 @@
     app_path={{atlas_prefix}}/django_files/
     virtualenv={{atlas_prefix}}/env/
   when: atlas_environment == 'prod'
-
-#TODO: Doing this via shell for now because django_manage doesn't let you pass
-#a listen ip to runserver. Don't do this in production
-#- name: Run server
-#  django_manage: >
-#      command=runserver
-#      app_path={{prefix}}/django_files/
-#      virtualenv={{prefix}}/env/
-
-#- name: run django server
-#  shell: ls; {{prefix}}/env/bin/python {{prefix}}/django_files/manage.py runserver --pythonpath={{prefix}}/django_files/ 0.0.0.0:8000
