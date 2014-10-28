@@ -57,6 +57,13 @@
 - name: copy in supervisor config
   template: owner={{atlas_webuser}} src=supervisor.atlas.conf dest=/etc/supervisor/conf.d/atlas.conf
 
+- name: run compression
+  django_manage: >
+    command=compress
+    app_path={{atlas_prefix}}/django_files/
+    virtualenv={{atlas_prefix}}/env/
+  when: atlas_environment == 'prod'
+
 #TODO: Doing this via shell for now because django_manage doesn't let you pass
 #a listen ip to runserver. Don't do this in production
 #- name: Run server
