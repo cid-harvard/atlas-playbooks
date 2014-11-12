@@ -32,9 +32,6 @@
 - name: copy in nginx main config files
   template: src=nginx.conf.{{atlas_environment}} dest=/etc/nginx/nginx.conf
 
-- name: reload nginx service
-  service: name=nginx state=reloaded
-
 - name: add user for celery
   user: name=celery shell=/bin/false createhome=no system=yes
 
@@ -63,3 +60,13 @@
     app_path={{atlas_prefix}}/django_files/
     virtualenv={{atlas_prefix}}/env/
   when: atlas_environment == 'prod'
+
+- name: reload nginx service
+  service: name=nginx state=reloaded
+
+- name: reload uwsgi
+  supervisorctl: name=uwsgi state=restarted
+  when: atlas_environment == 'prod'
+
+- name: reload celery
+  supervisorctl: name=celery state=restarted
