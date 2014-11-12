@@ -1,0 +1,13 @@
+---
+- hosts: all
+  sudo: yes
+  roles:
+      - role: web
+
+#  tasks:
+#      - name: update git
+#      - name: reinstall python packages
+#      - name: compress new assets
+#      - name: reload uwsgi
+#    # Could also do supervisorctl pid uwsgi | xargs ps -p for graceful reload
+#      - name: reload celery
