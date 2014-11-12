@@ -35,6 +35,9 @@ nosetests.xml
 .project
 .pydevproject
 
+# OS Stuff
+.DS_Store
+
 # Vagrant
 vagrant_ansible_inventory_default
 .vagrant/
