@@ -83,3 +83,9 @@ More Info
   there. To learn more about ssh-agent, read this guide
   (https://help.github.com/articles/using-ssh-agent-forwarding)
   -->
+
+Deploying
+---------
+Run `ansible-playbook -i prod/inventory --ask-vault-pass deploy.yml`
+
+You'll be asked for a Vault password, which Mali has and can add to your Keychain.
