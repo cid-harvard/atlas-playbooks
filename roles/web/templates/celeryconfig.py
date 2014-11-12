@@ -3,6 +3,7 @@ CELERY_IMPORTS = ('atlas.celery_tasks',)
 BROKER_URL = "{{atlas_celery_broker_url}}"
 CELERY_RESULT_BACKEND = "{{atlas_celery_result_backend}}"
 CELERY_TASK_SERIALIZER = "msgpack"
+CELERY_RESULT_SERIALIZER = "msgpack"
 
 CELERYD_CONCURRENCY = 3
 
