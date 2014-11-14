@@ -11,6 +11,7 @@
 - name: get code
   git: repo=https://github.com/cid-harvard/aid-explorer.git
        dest={{aidxp_prefix}}
+       depth=1
        version=master
 
 - name: install aidxp python requirements
