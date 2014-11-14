@@ -33,4 +33,3 @@
 
 - name: reload uwsgi
   supervisorctl: name=aidxp_uwsgi state=restarted
-  when: aidxp_environment == 'prod'
