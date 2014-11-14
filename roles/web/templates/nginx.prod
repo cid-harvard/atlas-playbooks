@@ -3,7 +3,14 @@ upstream django {
 }
 
 server {
+    listen 80;
+    server_name www.atlas.cid.harvard.edu;
+    return 301 $scheme://atlas.cid.harvard.edu$request_uri;
+}
+
+server {
     listen 80 default_server;
+    server_name atlas.cid.harvard.edu;
     charset utf-8;
 
     set $project_path {{atlas_prefix}};
