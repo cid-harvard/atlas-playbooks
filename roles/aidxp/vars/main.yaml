@@ -1,0 +1,11 @@
+---
+system_packages:
+    - git
+    - python2.7
+    - python-pip
+    - libmysqlclient-dev
+    - python-dev
+    - nginx
+    - supervisor
+    - uwsgi
+    - uwsgi-plugin-python

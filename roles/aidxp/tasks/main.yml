@@ -1,0 +1,36 @@
+---
+- name: install system packages
+  apt: pkg={{item}} state=present
+  with_items: system_packages
+- name: install virtualenv
+  pip: name=virtualenv
+- name: create srv dir
+  file: dest={{aidxp_prefix}} owner={{aidxp_webuser}} group={{aidxp_webuser}} state=directory recurse=yes
+- name: create log dir
+  file: dest=/var/log/aidxp/ owner={{aidxp_webuser}} group={{aidxp_webuser}} state=directory recurse=yes
+- name: get code
+  git: repo=https://github.com/cid-harvard/aid-explorer.git
+       dest={{aidxp_prefix}}
+       version=master
+
+- name: install aidxp python requirements
+  pip: requirements={{aidxp_prefix}}/requirements.txt virtualenv={{aidxp_prefix}}/env/
+
+- name: Remove existing nginx config
+  file: path=/etc/nginx/sites-enabled/default state=absent
+
+- name: copy in nginx site config file
+  template: src=nginx.aidxp dest=/etc/nginx/sites-enabled/aidxp
+
+- name: copy in uwsgi config
+  template: owner={{aidxp_webuser}} src=aidxp.uwsgi.ini dest=/etc/uwsgi/apps-enabled/aidxp.ini
+
+- name: copy in supervisor config
+  template: owner={{aidxp_webuser}} src=supervisor.aidxp.conf dest=/etc/supervisor/conf.d/aidxp.conf
+
+- name: reload nginx service
+  service: name=nginx state=reloaded
+
+- name: reload uwsgi
+  supervisorctl: name=aidxp_uwsgi state=restarted
+  when: aidxp_environment == 'prod'

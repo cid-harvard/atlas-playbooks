@@ -1,0 +1,26 @@
+upstream aidxp_django {
+    server 127.0.0.1:3032;
+}
+
+server {
+    listen 80 default_server;
+    server_name aidxp.cid.harvard.edu;
+    charset utf-8;
+
+    set $project_path {{aidxp_prefix}};
+
+    # Serve static files directly instead of through Django
+    location ~ ^/(static|media)/(.*)$ {
+        alias $project_path/$1/$2;
+        access_log off;
+        expires 15m;
+    }
+
+    # Serve main site
+    location / {
+
+    uwsgi_pass aidxp_django;
+    include /etc/nginx/uwsgi_params;
+    }
+
+}
