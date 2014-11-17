@@ -14,3 +14,5 @@ system_packages:
     - uwsgi
     - uwsgi-plugin-python
     - cssmin
+    - nodejs-legacy
+    - npm

@@ -60,6 +60,12 @@
     virtualenv={{atlas_prefix}}/env/
   when: atlas_environment == 'prod'
 
+- name: npm globally install bower
+  npm: name=bower global=yes production={{atlas_environment == 'prod'}}
+
+- name: npm
+  npm: path={{atlas_prefix}} production={{atlas_environment == 'prod'}}
+
 - name: reload nginx service
   service: name=nginx state=reloaded
 
