@@ -42,7 +42,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   config.vm.synced_folder "./vagrant_shared", "/vagrant_shared"
-  config.vm.synced_folder "./atlas", "/srv/atlas/", :create => true, :nfs => false
+  config.vm.synced_folder "./atlas", "/srv/atlas/", :create => true, :nfs => true
+  config.bindfs.bind_folder "/srv/atlas/", "/srv/atlas/"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
