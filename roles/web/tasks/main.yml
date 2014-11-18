@@ -11,7 +11,7 @@
 - name: get code
   git: repo=https://github.com/cid-harvard/atlas-economic-complexity.git
        dest={{atlas_prefix}}
-       version=beta
+       version=master
 
 - name: install atlas python requirements
   pip: requirements={{atlas_prefix}}/requirements.txt virtualenv={{atlas_prefix}}/env/
