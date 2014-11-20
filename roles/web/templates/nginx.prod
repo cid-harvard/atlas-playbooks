@@ -55,6 +55,11 @@ server {
     # Ped130 redirect
     rewrite ^/ped130/(.*)$ /$1 last;
 
+    # Redirect old aid explorer URLs.
+    location /aidxp/ {
+        rewrite ^/aidxp/(.*)$ http://aidxp.atlas.cid.harvard.edu/$1 permanent;
+    }
+
     # Serve main site
     location / {
 
