@@ -14,6 +14,7 @@ atlas_celery_broker_url: redis://localhost:6379/3
 atlas_celery_result_backend: redis://localhost:6379/3
 atlas_celery_workers_max: 1
 atlas_celery_workers_min: 1
+atlas_phantomjs_temp: /var/db/phantomjs-temp/
 atlas_webuser: vagrant
 atlas_environment: dev
 aidxp_webuser: vagrant

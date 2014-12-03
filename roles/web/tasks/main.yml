@@ -45,7 +45,7 @@
 
 # TODO: this file has owner "vagrant" but in prod it should have celery or www-data
 - name: add temp dir for celery task intermediate data
-  file: owner={{atlas_webuser}} group=www-data mode=0777 dest=/tmp/ramdisk/ recurse=yes state=directory
+  file: owner={{atlas_webuser}} group=www-data mode=0777 dest={{atlas_phantomjs_temp}} recurse=yes state=directory
 
 - name: copy in uwsgi config
   template: owner={{atlas_webuser}} src=atlas.uwsgi.ini dest=/etc/uwsgi/apps-enabled/atlas.ini
