@@ -8,6 +8,8 @@ atlas_db_port: 3306
 atlas_db_import_location: /vagrant_shared/atlas_dump.sql.gz
 atlas_redis_connection_string: "127.0.0.1:6379:0"
 atlas_prefix: /srv/atlas
+atlas_git_version: beta
+atlas_git_repo: https://github.com/cid-harvard/atlas-economic-complexity.git
 atlas_static_image_path: /var/db/images/
 atlas_static_image_phantomjs_url: http://127.0.0.1:8000/
 atlas_celery_broker_url: redis://localhost:6379/3
