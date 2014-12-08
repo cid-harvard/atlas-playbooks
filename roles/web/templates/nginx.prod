@@ -25,7 +25,7 @@ server {
 
     {% if atlas_password_protected == True %}
     auth_basic "atlas-beta";
-    auth_basic_user_file: htpasswd;
+    auth_basic_user_file htpasswd;
     {% endif %}
 
     # Temp files only for phantomjs process

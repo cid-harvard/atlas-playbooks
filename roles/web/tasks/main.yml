@@ -32,7 +32,7 @@
   template: src=nginx.conf.{{atlas_environment}} dest=/etc/nginx/nginx.conf
 
 - name: generate htpasswd file
-  htpasswd: name=atlas password={{atlas_password}} path=/etc/nginx/passwd
+  htpasswd: name=atlas password={{atlas_password}} path=/etc/nginx/htpasswd
   when: atlas_password_protected == True
 
 - name: add user for celery
