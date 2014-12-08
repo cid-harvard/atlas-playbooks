@@ -4,6 +4,7 @@ system_packages:
     - git
     - python2.7
     - python-pip
+    - python-passlib
     - libmysqlclient-dev
     - python-dev
     - libffi-dev

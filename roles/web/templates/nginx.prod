@@ -23,6 +23,11 @@ server {
         deny all;
     }
 
+    {% if atlas_password_protected == True %}
+    auth_basic "atlas-beta";
+    auth_basic_user_file: htpasswd;
+    {% endif %}
+
     # Temp files only for phantomjs process
     location ~ ^/(celery-temp-file-.*)$ {
         allow 127.0.0.1;

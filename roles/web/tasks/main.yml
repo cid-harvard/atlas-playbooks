@@ -31,6 +31,10 @@
 - name: copy in nginx main config files
   template: src=nginx.conf.{{atlas_environment}} dest=/etc/nginx/nginx.conf
 
+- name: generate htpasswd file
+  htpasswd: name=atlas password={{atlas_password}} path=/etc/nginx/passwd
+  when: atlas_password_protected == True
+
 - name: add user for celery
   user: name=celery shell=/bin/false createhome=no system=yes
 
