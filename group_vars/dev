@@ -6,6 +6,7 @@ atlas_db_name: atlas
 atlas_db_host: 127.0.0.1
 atlas_db_port: 3306
 atlas_db_import_location: /vagrant_shared/atlas_dump.sql.gz
+atlas_conn_max_age: None
 atlas_redis_connection_string: "127.0.0.1:6379:0"
 atlas_prefix: /srv/atlas
 atlas_git_version: beta

@@ -6,6 +6,7 @@ DATABASES = {
         'PASSWORD': '{{atlas_db_password}}',
         'HOST': '{{atlas_db_host}}',
         'PORT': '{{atlas_db_port}}',
+        'CONN_MAX_AGE': {{atlas_conn_max_age}}
     }
 }
 
