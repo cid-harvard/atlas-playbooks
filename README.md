@@ -33,6 +33,7 @@ To easily install a virtualized dev environment from scratch:
   and the file should have a shasum of 903e69a3ff70ad33f434abd9cf7726fd45fa5fdd.
 
 4. Begin installing (30min)
+  - Do `vagrant plugin install vagrant-bindfs`.
   - Do `vagrant up`. Sit back and wait until all the stuff downloads. It'll download a 350mb VM
   image, around that much more for all the required python and ubuntu packages.
   The “importing atlas DB” part takes the longest.
