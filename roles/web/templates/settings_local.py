@@ -10,6 +10,11 @@ DATABASES = {
     }
 }
 
+YEAR_MIN_HS4 = 1995
+YEAR_MAX_HS4 = 2013
+YEAR_MIN_SITC4 = 1967
+YEAR_MAX_SITC4 = 2013
+
 CACHES = {
     'default': {
         'BACKEND': 'redis_cache.cache.RedisCache',
