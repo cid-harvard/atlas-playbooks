@@ -1,19 +1,14 @@
 - name: run git status
   local_action: shell git status | grep "up-to-date with 'origin/master'"
   ignore_errors: True
-  sudo: no
   register: git_up_to_date
 - name: fail if git not up to date
   local_action: fail msg="Please pull / push the latest changes to the playbooks repo before deploying."
-  sudo: no
   when: git_up_to_date | failed
 
 - name: run git diff
-  local_action: shell git diff --quiet && git diff --staged --quiet
-  ignore_errors: True
-  sudo: no
-  register: git_unstaged_changes
+  local_action: command git status -s
+  register: git_uncomitted_changes
 - name: fail if there are uncommitted changes
-  local_action: fail msg="Please commit and push your changes to the playbooks repo before deploying."
-  sudo: no
-  when: git_unstaged_changes | failed
+  local_action: fail msg="Please commit and push your changes to the playbooks repo before deploying, and make sure there are no unstaged files in the playbooks repo."
+  when: git_uncomitted_changes.stdout|length > 0
