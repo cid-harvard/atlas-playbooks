@@ -1,6 +1,9 @@
 ---
 - hosts: all
   sudo: yes
+  pre_tasks:
+    - include: check_git_synced.yml
+      when: atlas_environment != 'dev'
   roles:
     - role: db
       when: atlas_environment == 'dev'
