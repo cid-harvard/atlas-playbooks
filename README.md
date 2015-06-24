@@ -86,5 +86,6 @@ More Info
 Deploying
 ---------
 Run `ansible-playbook -i prod/inventory --ask-vault-pass deploy.yml`
+For beta run `ansible-playbook -i beta/inventory playbook.yml --ask-vault-pass`
 
 You'll be asked for a Vault password, which Mali has and can add to your Keychain.
