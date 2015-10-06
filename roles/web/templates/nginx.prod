@@ -32,7 +32,7 @@ server {
     location ~ ^/(celery-temp-file-.*)$ {
         allow 127.0.0.1;
         deny all;
-        alias /tmp/ramdisk/$1;
+        alias {{atlas_phantomjs_temp}}$1;
         access_log  off;
     }
 
