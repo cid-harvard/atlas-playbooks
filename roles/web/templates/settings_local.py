@@ -10,10 +10,10 @@ DATABASES = {
     }
 }
 
-YEAR_MIN_HS4 = 1995
-YEAR_MAX_HS4 = 2013
-YEAR_MIN_SITC4 = 1967
-YEAR_MAX_SITC4 = 2013
+YEAR_MIN_HS4 = {{atlas_year_min_hs | int}}
+YEAR_MAX_HS4 = {{atlas_year_max_hs | int}}
+YEAR_MIN_SITC4 = {{atlas_year_min_sitc | int}}
+YEAR_MAX_SITC4 = {{atlas_year_max_sitc | int}}
 
 CACHES = {
     'default': {

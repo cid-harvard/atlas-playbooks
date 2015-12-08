@@ -23,5 +23,9 @@ atlas_celery_workers_min: 1
 atlas_phantomjs_temp: /var/db/phantomjs-temp/
 atlas_webuser: vagrant
 atlas_environment: dev
+atlas_year_min_hs: 1995
+atlas_year_max_hs: 2014
+atlas_year_min_sitc: 1967
+atlas_year_max_sitc: 2014
 aidxp_webuser: vagrant
 aidxp_prefix: /srv/aidxp
