@@ -76,7 +76,7 @@ COMPRESS_JS_FILTERS = [
 COMPRESS_OFFLINE = not DEBUG
 COMPRESS_OFFLINE_CONTEXT = {
     'STATIC_URL': '/media/',
-    'VERSION': '1.0.7',  # TODO: We don't need this anymore maybe?
+    'VERSION': '1.0.8',  # TODO: We don't need this anymore maybe?
 }
 
 LOGGING = {
