@@ -57,6 +57,18 @@ server {
         expires 15m;
     }
 
+    location /hs4 {
+        deny all;
+    }
+
+    location /sitc4 {
+        deny all;
+    }
+
+    location /country {
+        deny all;
+    }
+
     # Ped130 redirect
     rewrite ^/ped130/(.*)$ /$1 last;
 
