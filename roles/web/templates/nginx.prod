@@ -86,6 +86,7 @@ server {
         # Cache dropdown requests on client
         location ~ ^/api/dropdowns/.*$ {
             expires 15m;
+            uwsgi_read_timeout 90s;
             uwsgi_pass  django;
             #proxy_set_header Host $http_host;
             include /etc/nginx/uwsgi_params;
