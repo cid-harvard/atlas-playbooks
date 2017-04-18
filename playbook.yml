@@ -16,6 +16,7 @@
       redis_maxmemory_policy: allkeys-lru
       when: atlas_environment == 'dev'
     - role: elasticsearch
+      elasticsearch_version: 1.7.6
       elasticsearch_timezone: "Etc/UTC"
       elasticsearch_plugins:
           - name: 'mobz/elasticsearch-head'
