@@ -1,6 +1,7 @@
 ---
 system_packages:
     - language-pack-en
+    - denyhosts
     - git
     - python2.7
     - python-pip
