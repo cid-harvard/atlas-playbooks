@@ -1,7 +1,7 @@
 ---
 system_packages:
     - language-pack-en
-    - denyhosts
+    - fail2ban
     - git
     - python2.7
     - python-pip
