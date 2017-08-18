@@ -1,7 +1,7 @@
 ---
 - name: install system packages
   apt: pkg={{item}} state=present
-  with_items: system_packages
+  with_items: "{{system_packages}}"
 - name: install virtualenv
   pip: name=virtualenv
 - name: create srv dir
