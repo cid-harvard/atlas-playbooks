@@ -1,7 +1,10 @@
 atlas-playbooks
 ===============
 
-Ansible playbooks and Vagrantfile for the Atlas of Economic Complexity.
+Ansible playbooks and Vagrantfile for the Atlas of Economic Complexity, and the
+aid explorer.
+
+Important! Use ansible 2.5, but no later.
 
 Setting Up a Development Environment
 ------------------------------------
