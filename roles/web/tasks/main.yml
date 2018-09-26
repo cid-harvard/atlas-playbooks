@@ -8,6 +8,8 @@
   file: dest={{atlas_prefix}} owner={{atlas_webuser}} group={{atlas_webuser}} state=directory recurse=yes
 - name: create log dir
   file: dest=/var/log/django/ owner={{atlas_webuser}} group={{atlas_webuser}} state=directory recurse=yes
+- name: create django local cache dir
+  file: dest=/tmp/django_cache/ owner={{atlas_webuser}} group={{atlas_webuser}} state=directory recurse=yes
 - name: get code
   git: repo={{atlas_git_repo}}
        dest={{atlas_prefix}}

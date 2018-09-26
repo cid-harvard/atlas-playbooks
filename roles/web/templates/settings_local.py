@@ -17,11 +17,13 @@ YEAR_MAX_SITC4 = {{atlas_year_max_sitc | int}}
 
 CACHES = {
     'default': {
-        'BACKEND': 'redis_cache.cache.RedisCache',
-        'LOCATION': '{{atlas_redis_connection_string}}',
-        'OPTIONS': {
-            "PARSER_CLASS": "redis.connection.HiredisParser"
-        }
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/tmp/django_cache/',
+        # 'BACKEND': 'redis_cache.cache.RedisCache',
+        # 'LOCATION': '{{atlas_redis_connection_string}}',
+        # 'OPTIONS': {
+            # "PARSER_CLASS": "redis.connection.HiredisParser"
+        # }
     },
 }
 
